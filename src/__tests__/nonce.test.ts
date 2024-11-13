@@ -26,7 +26,7 @@ describe('nonce tracking', () => {
       const { address: nextOwner, privKey: nextOwnerKey } = await randomAccount(provider)
       const { address: finalOwner } = await randomAccount(provider)
 
-      const identifier = `did:ethr:dev:${originalOwner}`
+      const identifier = `did:ezrah:dev:${originalOwner}`
 
       const ethrController = new EzrahDidController(
         identifier,
@@ -113,7 +113,7 @@ describe('nonce tracking', () => {
       const { address: nextOwner, privKey: nextOwnerKey } = await randomAccount(provider)
       const { address: finalOwner } = await randomAccount(provider)
 
-      const identifier = `did:ethr:legacy:${originalOwner}`
+      const identifier = `did:ezrah:legacy:${originalOwner}`
 
       const hash = await new EzrahDidController(identifier, legacyRegistryContract).createChangeOwnerHash(nextOwner)
       const signature = originalOwnerKey.sign(hash)
@@ -156,7 +156,7 @@ describe('nonce tracking', () => {
       const attributeValue = JSON.stringify(serviceEndpointParams)
       const attributeExpiration = 86400
 
-      const identifier = `did:ethr:legacy:${originalOwner}`
+      const identifier = `did:ezrah:legacy:${originalOwner}`
 
       const hash = await new EzrahDidController(identifier, legacyRegistryContract).createChangeOwnerHash(nextOwner)
       const signature = originalOwnerKey.sign(hash)
